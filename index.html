@@ -13,6 +13,7 @@
 <style>
 :root{--bg:#0a0a0a;--card:#161616;--line:#262626;--y:#f7ce45;--txt:#fff;--mut:#9a9a9a}
 *{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden}
 body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,Arial,sans-serif;line-height:1.65}
 .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
 .y{color:var(--y)}
@@ -20,12 +21,12 @@ body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,Aria
 .btn:hover{filter:brightness(1.1)}
 .btn.ghost{background:transparent;border:1px solid var(--line);color:#fff}
 header{border-bottom:1px solid var(--line)}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
 .logo{display:flex;align-items:center}
 .logo img{height:48px;width:auto}
 .s{width:22px;height:22px}
 .ic{width:44px;height:44px;min-width:44px;border-radius:50%;background:#1f1f1f;color:var(--y);display:flex;align-items:center;justify-content:center}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:70px 0 50px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:50px 0}
 h1{font-size:2.3rem;line-height:1.25;margin-bottom:14px}
 .sub{color:var(--mut);max-width:460px}
 .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
@@ -50,7 +51,142 @@ h2{font-size:1.7rem;text-align:center;line-height:1.3}
 .g8 .ic{margin-bottom:12px}
 .g8 h4{font-size:.95rem;margin-bottom:6px}
 .g8 p{color:var(--mut);font-size:.82rem}
-  <!-- CARA MEMULAI -->
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:.8rem}
+.wa-float{position:fixed;right:16px;bottom:16px;background:#25d366;color:#fff;border-radius:999px;padding:12px 20px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+
+/* ===== CARA MEMULAI (section terang) ===== */
+.light{background:#f6f6f4;color:#111}
+.light h2{color:#111}
+.light .lead{color:#555}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{background:#fff;border:1px solid #e6e6e2;border-radius:14px;padding:20px;position:relative}
+.step .no{position:absolute;top:14px;right:16px;font-weight:800;color:#c9c9c9}
+.thumb{height:150px;border-radius:10px;background:#eeeee9;display:flex;align-items:center;justify-content:center;margin-bottom:14px;position:relative;overflow:hidden}
+.thumb .ph{font-size:56px;opacity:.5}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.step h4{margin-bottom:6px;color:#111}
+.step p{color:#666;font-size:.85rem}
+
+/* ===== MENGAPA EXNESS (collage) ===== */
+.collage{display:grid;grid-template-columns:1.1fr 1fr 1fr;grid-auto-rows:190px;gap:14px}
+.col-item{position:relative;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#232323,#101010)}
+.col-tall{grid-row:span 2}
+.col-wide{grid-column:span 2}
+.col-item .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:60px;opacity:.35}
+.col-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.col-item .cap{position:absolute;top:12px;left:12px;right:12px;z-index:2;font-weight:700;font-size:.9rem;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.badge-store{background:#161616;border:1px solid var(--line);border-radius:10px;padding:10px 18px;font-size:.8rem;display:flex;align-items:center;gap:8px}
+.badge-store b{color:var(--y)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:40px 0 20px;gap:10px}
+  .hero-visual{min-height:auto;padding:10px 0}
+  .hero-visual img{max-width:360px}
+  h1{font-size:1.9rem}
+  .strip,.grid8{grid-template-columns:1fr 1fr}
+  .steps3{grid-template-columns:1fr}
+  .collage{grid-template-columns:1fr}
+  .col-tall,.col-wide{grid-column:auto;grid-row:auto}
+  .nav{padding:16px 0}
+  .hero{padding:50px 0 24px}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .strip,.grid8{grid-template-columns:1fr}
+  h1{font-size:1.55rem}
+  .cta .btn{padding:12px 18px;font-size:.9rem}
+  .wa-float{right:12px;bottom:12px;padding:10px 16px}
+  .hero{padding:40px 0 20px}
+  .hero-visual img{max-width:100%}
+}
+</style>
+</head>
+<body>
+
+<svg style="display:none">
+<symbol id="i-coins" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></g></symbol>
+<symbol id="i-spread" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9h16M17 6l3 3-3 3"/><path d="M20 15H4M7 12l-3 3 3 3"/></g></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></g></symbol>
+<symbol id="i-bars" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 20v-8M12 20V6M19 20v-9"/></g></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 12.5 9.5 18 20 6.5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 14h2"/></g></symbol>
+<symbol id="i-percent" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/></symbol>
+</svg>
+
+<header><div class="wrap nav">
+  <a class="logo" href="/">
+    <img src="exness-id.png" alt="Exness Indonesia" height="48">
+  </a>
+  <a class="btn" href="https://one.exnessonelink.com/a/itde4i4pxv" target="_blank" rel="nofollow sponsored">Buka Akun</a>
+</div></header>
+
+<div class="wrap hero">
+  <div>
+    <h1>Trading <span class="y">IDR</span> di Exness — Deposit Rupiah, Tanpa Biaya Konversi</h1>
+    <p class="sub">Saldo, deposit, dan penarikan langsung dalam Rupiah via bank lokal. Profit terhitung jelas dalam IDR, dengan kondisi trading tetap unggulan.</p>
+    <div class="cta">
+      <a class="btn" href="https://one.exnessonelink.com/a/itde4i4pxv" target="_blank" rel="nofollow sponsored">Buka Akun IDR</a>
+      <a class="btn ghost" href="https://wa.me/6281234567890" target="_blank">Chat Admin</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="hero-idr.png" alt="Trading IDR Exness - akun rupiah tanpa biaya konversi">
+  </div>
+</div>
+
+<div class="wrap strip">
+  <div><span class="ic"><svg class="s"><use href="#i-moon"/></svg></span>Bebas swap untuk semua orang*</div>
+  <div><span class="ic"><svg class="s"><use href="#i-spread"/></svg></span>Spread stabil</div>
+  <div><span class="ic"><svg class="s"><use href="#i-bars"/></svg></span>Harga stabil</div>
+  <div><span class="ic"><svg class="s"><use href="#i-percent"/></svg></span>Komisi 0%</div>
+</div>
+
+<section id="ketentuan"><div class="wrap">
+  <h2>Penjelasan ketentuan<br><span class="y">trading yang menarik</span></h2>
+  <p class="lead">Ada hal-hal yang wajib didapatkan setiap trader: harga kompetitif, eksekusi andal, dan biaya yang transparan. Lihat perbedaannya di bawah ini.</p>
+  <div class="panel"><h3>Praktik standar industri</h3>
+    <div class="flow">
+      <div class="st"><span class="ic"><svg class="s red"><use href="#i-coins"/></svg></span>Ukuran order</div><span class="arr">→</span>
+      <div class="st"><span class="ic"><svg class="s red"><use href="#i-spread"/></svg></span>Spread melebar</div><span class="arr">→</span>
+      <div class="st"><span class="ic"><svg class="s red"><use href="#i-clock"/></svg></span>Eksekusi terlambat / likuiditas tipis</div><span class="arr">→</span>
+      <div class="st"><span class="ic"><svg class="s red"><use href="#i-bars"/></svg></span>Biaya trading membengkak</div>
+    </div>
+  </div>
+  <div class="panel"><h3 class="y">Model Exness</h3>
+    <div class="flow">
+      <div class="st"><span class="ic"><svg class="s grn"><use href="#i-coins"/></svg></span>Ukuran order + likuiditas dalam</div><span class="arr">→</span>
+      <div class="st"><span class="ic"><svg class="s grn"><use href="#i-spread"/></svg></span>Spread tetap stabil</div><span class="arr">→</span>
+      <div class="st"><span class="ic"><svg class="s grn"><use href="#i-check"/></svg></span>Eksekusi andal, likuiditas tanpa gangguan</div><span class="arr">→</span>
+      <div class="st"><span class="ic"><svg class="s grn"><use href="#i-bars"/></svg></span>Biaya trading terkendali</div>
+    </div>
+  </div>
+  <p class="note">Saat ukuran order membesar, likuiditas yang tipis biasanya membuat spread melebar. Di <b class="y">Exness Indonesia</b>, masalah itu diatasi dengan memberikan akses ke likuiditas yang sangat dalam — sehingga spread tetap terjaga bahkan saat order besar dan pasar volatil.</p>
+  <p class="center"><a class="btn" href="https://one.exnessonelink.com/a/itde4i4pxv" target="_blank" rel="nofollow sponsored">Gabung Exness</a></p>
+</div></section>
+
+<section id="trader"><div class="wrap">
+  <h2>Kami mengetahui apa yang penting<br>bagi trader</h2>
+  <p class="lead">Kondisi trading Exness dirancang agar Anda mendapat harga wajar, eksekusi pasti, dan kendali penuh atas dana.</p>
+  <div class="grid8">
+    <div class="g8"><span class="ic"><svg class="s"><use href="#i-bars"/></svg></span><h4>Harga wajar & stabil</h4><p>Model harga canggih menjaga kewajaran harga kuotasi.</p></div>
+    <div class="g8"><span class="ic"><svg class="s"><use href="#i-bolt"/></svg></span><h4>Eksekusi cepat & andal</h4><p>Order tereksekusi cepat tanpa penundaan yang tidak perlu.</p></div>
+    <div class="g8"><span class="ic"><svg class="s"><use href="#i-check"/></svg></span><h4>Tanpa 'Last Look'</h4><p>Tanpa penolakan di detik terakhir — eksekusi lebih pasti.</p></div>
+    <div class="g8"><span class="ic"><svg class="s"><use href="#i-spread"/></svg></span><h4>Spread stabil</h4><p>Tetap terjaga bahkan saat volatilitas meningkat.</p></div>
+    <div class="g8"><span class="ic"><svg class="s"><use href="#i-wallet"/></svg></span><h4>Penarikan instan</h4><p>Withdraw otomatis 24/7 — dana di kendali Anda.</p></div>
+    <div class="g8"><span class="ic"><svg class="s"><use href="#i-percent"/></svg></span><h4>Komisi 0%</h4><p>Tanpa komisi untuk deposit & penarikan.</p></div>
+    <div class="g8"><span class="ic"><svg class="s"><use href="#i-shield"/></svg></span><h4>Peraturan Gap Level</h4><p>Perlindungan ekstra dari slippage saat pasar gap.</p></div>
+    <div class="g8"><span class="ic"><svg class="s"><use href="#i-moon"/></svg></span><h4>Bebas swap untuk semua*</h4><p>Sesuai ketentuan yang berlaku di Exness.</p></div>
+  </div>
+  <p class="note">Buka akun dan rasakan sendiri ketentuan trading yang lebih ringan di Exness Indonesia.</p>
+  <p class="center"><a class="btn" href="https://one.exnessonelink.com/a/itde4i4pxv" target="_blank" rel="nofollow sponsored">Gabung Exness</a></p>
+</div></section>
+
+<!-- CARA MEMULAI -->
 <section class="light"><div class="wrap">
   <h2>Cara memulai</h2>
   <p class="lead">Tiga langkah sederhana untuk mulai trading di Exness.</p>
@@ -94,150 +230,6 @@ h2{font-size:1.7rem;text-align:center;line-height:1.3}
     <div class="badge-store">📊 Investing.com <b>Terpercaya</b></div>
   </div>
   <p class="center" style="margin-top:20px"><a class="btn" href="https://one.exnessonelink.com/a/itde4i4pxv" target="_blank" rel="nofollow sponsored">Gabung Exness</a></p>
-</div></section>
-footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:.8rem}
-.wa-float{position:fixed;right:16px;bottom:16px;background:#25d366;color:#fff;border-radius:999px;padding:12px 20px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.5)}
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;padding:40px 0 20px;gap:10px}
-  .hero-visual{min-height:auto;padding:10px 0}
-  .hero-visual img{max-width:360px}
-  h1{font-size:1.9rem}
-  .strip,.grid8{grid-template-columns:1fr 1fr}
-}
-@media(max-width:560px){
-  .wrap{padding:0 16px}
-  .strip,.grid8{grid-template-columns:1fr}
-  h1{font-size:1.6rem}
-  .cta .btn{padding:12px 18px;font-size:.9rem}
-  .wa-float{right:12px;bottom:12px;padding:10px 16px}
-}
-  /* Jarak ekstra di mobile */
-@media(max-width:900px){
-  .nav{padding:16px 0}
-  .hero{padding:50px 0 24px}
-}
-  /* Rapikan pinggir mobile */
-html,body{overflow-x:hidden}
-.wrap{padding:0 20px}
-@media(max-width:560px){
-  .wrap{padding:0 18px}
-  h1{font-size:1.55rem}
-  .hero{padding:40px 0 20px}
-  .hero-visual img{max-width:100%}
-}/* Spasi atas-bawah header */
-.nav{padding:20px 0}
-
-/* Jarak header ke judul hero */
-.hero{padding:50px 0 50px}
-  /* ===== CARA MEMULAI (section terang) ===== */
-.light{background:#f6f6f4;color:#111}
-.light h2{color:#111}
-.light .lead{color:#555}
-.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.step{background:#fff;border:1px solid #e6e6e2;border-radius:14px;padding:20px;position:relative}
-.step .no{position:absolute;top:14px;right:16px;font-weight:800;color:#c9c9c9}
-.thumb{height:150px;border-radius:10px;background:#eeeee9;display:flex;align-items:center;justify-content:center;margin-bottom:14px;position:relative;overflow:hidden}
-.thumb .ph{font-size:56px;opacity:.5}
-.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.step h4{margin-bottom:6px;color:#111}
-.step p{color:#666;font-size:.85rem}
-
-/* ===== MENGAPA EXNESS (collage) ===== */
-.collage{display:grid;grid-template-columns:1.1fr 1fr 1fr;grid-auto-rows:190px;gap:14px}
-.col-item{position:relative;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#232323,#101010)}
-.col-tall{grid-row:span 2}
-.col-wide{grid-column:span 2}
-.col-item .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:60px;opacity:.35}
-.col-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.col-item .cap{position:absolute;top:12px;left:12px;right:12px;z-index:2;font-weight:700;font-size:.9rem;text-shadow:0 2px 8px rgba(0,0,0,.7)}
-.badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-.badge-store{background:#161616;border:1px solid var(--line);border-radius:10px;padding:10px 18px;font-size:.8rem;display:flex;align-items:center;gap:8px}
-.badge-store b{color:var(--y)}
-@media(max-width:900px){.steps3{grid-template-columns:1fr}.collage{grid-template-columns:1fr}.col-tall,.col-wide{grid-column:auto;grid-row:auto}}
-</style>
-</head>
-<body>
-
-<svg style="display:none">
-<symbol id="i-coins" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></g></symbol>
-<symbol id="i-spread" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9h16M17 6l3 3-3 3"/><path d="M20 15H4M7 12l-3 3 3 3"/></g></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></g></symbol>
-<symbol id="i-bars" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 20v-8M12 20V6M19 20v-9"/></g></symbol>
-<symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
-<symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 12.5 9.5 18 20 6.5"/></symbol>
-<symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></symbol>
-<symbol id="i-wallet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 14h2"/></g></symbol>
-<symbol id="i-percent" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></g></symbol>
-<symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/></symbol>
-</svg>
-
-<!-- HEADER: hanya logo di kiri, tombol di kanan -->
-<header><div class="wrap nav">
-  <a class="logo" href="/">
-    <img src="exness-id.png" alt="Exness Indonesia" height="36">
-  </a>
-  <a class="btn" href="https://one.exnessonelink.com/a/itde4i4pxv" target="_blank" rel="nofollow sponsored">Buka Akun</a>
-</div></header>
-
-<div class="wrap hero">
-  <div>
-    <h1>Trading <span class="y">IDR</span> di Exness — Deposit Rupiah, Tanpa Biaya Konversi</h1>
-    <p class="sub">Saldo, deposit, dan penarikan langsung dalam Rupiah via bank lokal. Profit terhitung jelas dalam IDR, dengan kondisi trading tetap unggulan.</p>
-    <div class="cta">
-      <a class="btn" href="https://one.exnessonelink.com/a/itde4i4pxv" target="_blank" rel="nofollow sponsored">Buka Akun IDR</a>
-      <a class="btn ghost" href="https://wa.me/6281234567890" target="_blank">Chat Admin</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <img src="hero-idr.png" alt="Trading IDR Exness - akun rupiah tanpa biaya konversi" style="width:100%;max-width:480px;position:relative;z-index:2">
-  </div>
-</div>
-
-<div class="wrap strip">
-  <div><span class="ic"><svg class="s"><use href="#i-moon"/></svg></span>Bebas swap untuk semua orang*</div>
-  <div><span class="ic"><svg class="s"><use href="#i-spread"/></svg></span>Spread stabil</div>
-  <div><span class="ic"><svg class="s"><use href="#i-bars"/></svg></span>Harga stabil</div>
-  <div><span class="ic"><svg class="s"><use href="#i-percent"/></svg></span>Komisi 0%</div>
-</div>
-
-<section id="ketentuan"><div class="wrap">
-  <h2>Penjelasan ketentuan<br><span class="y">trading yang menarik</span></h2>
-  <p class="lead">Ada hal-hal yang wajib didapatkan setiap trader: harga kompetitif, eksekusi andal, dan biaya yang transparan. Lihat perbedaannya di bawah ini.</p>
-  <div class="panel"><h3>Praktik standar industri</h3>
-    <div class="flow">
-      <div class="st"><span class="ic"><svg class="s red"><use href="#i-coins"/></svg></span>Ukuran order</div><span class="arr">→</span>
-      <div class="st"><span class="ic"><svg class="s red"><use href="#i-spread"/></svg></span>Spread melebar</div><span class="arr">→</span>
-      <div class="st"><span class="ic"><svg class="s red"><use href="#i-clock"/></svg></span>Eksekusi terlambat / likuiditas tipis</div><span class="arr">→</span>
-      <div class="st"><span class="ic"><svg class="s red"><use href="#i-bars"/></svg></span>Biaya trading membengkak</div>
-    </div>
-  </div>
-  <div class="panel"><h3 class="y">Model Exness</h3>
-    <div class="flow">
-      <div class="st"><span class="ic"><svg class="s grn"><use href="#i-coins"/></svg></span>Ukuran order + likuiditas dalam</div><span class="arr">→</span>
-      <div class="st"><span class="ic"><svg class="s grn"><use href="#i-spread"/></svg></span>Spread tetap stabil</div><span class="arr">→</span>
-      <div class="st"><span class="ic"><svg class="s grn"><use href="#i-check"/></svg></span>Eksekusi andal, likuiditas tanpa gangguan</div><span class="arr">→</span>
-      <div class="st"><span class="ic"><svg class="s grn"><use href="#i-bars"/></svg></span>Biaya trading terkendali</div>
-    </div>
-  </div>
-  <p class="note">Saat ukuran order membesar, likuiditas yang tipis biasanya membuat spread melebar. Di <b class="y">Exness Indonesia</b>, masalah itu diatasi dengan memberikan akses ke likuiditas yang sangat dalam — sehingga spread tetap terjaga bahkan saat order besar dan pasar volatil.</p>
-  <p class="center"><a class="btn" href="https://one.exnessonelink.com/a/itde4i4pxv" target="_blank" rel="nofollow sponsored">Gabung Exness</a></p>
-</div></section>
-
-<section id="trader"><div class="wrap">
-  <h2>Kami mengetahui apa yang penting<br>bagi trader</h2>
-  <p class="lead">Kondisi trading Exness dirancang agar Anda mendapat harga wajar, eksekusi pasti, dan kendali penuh atas dana.</p>
-  <div class="grid8">
-    <div class="g8"><span class="ic"><svg class="s"><use href="#i-bars"/></svg></span><h4>Harga wajar & stabil</h4><p>Model harga canggih menjaga kewajaran harga kuotasi.</p></div>
-    <div class="g8"><span class="ic"><svg class="s"><use href="#i-bolt"/></svg></span><h4>Eksekusi cepat & andal</h4><p>Order tereksekusi cepat tanpa penundaan yang tidak perlu.</p></div>
-    <div class="g8"><span class="ic"><svg class="s"><use href="#i-check"/></svg></span><h4>Tanpa ‘Last Look’</h4><p>Tanpa penolakan di detik terakhir — eksekusi lebih pasti.</p></div>
-    <div class="g8"><span class="ic"><svg class="s"><use href="#i-spread"/></svg></span><h4>Spread stabil</h4><p>Tetap terjaga bahkan saat volatilitas meningkat.</p></div>
-    <div class="g8"><span class="ic"><svg class="s"><use href="#i-wallet"/></svg></span><h4>Penarikan instan</h4><p>Withdraw otomatis 24/7 — dana di kendali Anda.</p></div>
-    <div class="g8"><span class="ic"><svg class="s"><use href="#i-percent"/></svg></span><h4>Komisi 0%</h4><p>Tanpa komisi untuk deposit & penarikan.</p></div>
-    <div class="g8"><span class="ic"><svg class="s"><use href="#i-shield"/></svg></span><h4>Peraturan Gap Level</h4><p>Perlindungan ekstra dari slippage saat pasar gap.</p></div>
-    <div class="g8"><span class="ic"><svg class="s"><use href="#i-moon"/></svg></span><h4>Bebas swap untuk semua*</h4><p>Sesuai ketentuan yang berlaku di Exness.</p></div>
-  </div>
-  <p class="note">Buka akun dan rasakan sendiri ketentuan trading yang lebih ringan di Exness Indonesia.</p>
-  <p class="center"><a class="btn" href="https://one.exnessonelink.com/a/itde4i4pxv" target="_blank" rel="nofollow sponsored">Gabung Exness</a></p>
 </div></section>
 
 <footer><div class="wrap">
